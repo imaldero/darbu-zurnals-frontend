@@ -11,7 +11,9 @@ function Form({ onPageChange }) {
   async function fetchData(url) {
     try {
       let names;
-      const response = await fetch(`http://127.0.0.1:3000/${url}`);
+      const response = await fetch(
+        `https://rigorous-thundering-rifle.glitch.me/${url}`
+      );
       const data = await response.json();
       if (url === "objects") {
         names = data.map((e) => e.name);
@@ -60,7 +62,7 @@ function Form({ onPageChange }) {
     const id_type = data.get(`id_type`);
     const remark = data.get(`remark`);
 
-    await fetch(`http://127.0.0.1:3000/submit-issue`, {
+    await fetch(`https://rigorous-thundering-rifle.glitch.me/submit-issue`, {
       headers: {
         "Content-type": "application/json",
       },

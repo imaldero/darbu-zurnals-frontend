@@ -4,7 +4,9 @@ import "./style.css";
 function Table() {
   const [issueData, setissueData] = useState([]);
   const getIssueData = async function () {
-    const response = await fetch(`http://127.0.0.1:3000/issue`);
+    const response = await fetch(
+      `https://rigorous-thundering-rifle.glitch.me/issue`
+    );
     const data = await response.json();
     console.log(data);
     setissueData(data);

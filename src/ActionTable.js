@@ -5,7 +5,9 @@ function ActionTable() {
   const [actionData, setActionData] = useState([]);
   useEffect(() => {
     const getActionData = async function () {
-      const response = await fetch(`http://127.0.0.1:3000/action`);
+      const response = await fetch(
+        `https://rigorous-thundering-rifle.glitch.me/action`
+      );
       const data = await response.json();
       console.log(data);
       setActionData(data);

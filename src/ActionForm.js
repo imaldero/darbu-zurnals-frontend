@@ -10,7 +10,9 @@ function ActionForm({ onPageChange }) {
     async function fetchData(url) {
       try {
         let names, ids;
-        const response = await fetch(`http://127.0.0.1:3000/${url}`);
+        const response = await fetch(
+          `https://rigorous-thundering-rifle.glitch.me/${url}`
+        );
         const data = await response.json();
         if (url === "users") {
           names = data.map((e) => `${e.vards} ${e.uzv}`);
@@ -60,7 +62,7 @@ function ActionForm({ onPageChange }) {
       })
     );
 
-    await fetch(`http://127.0.0.1:3000/submit-action`, {
+    await fetch(`https://rigorous-thundering-rifle.glitch.me/submit-action`, {
       headers: {
         "Content-type": "application/json",
       },
