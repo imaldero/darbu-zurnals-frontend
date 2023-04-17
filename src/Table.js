@@ -8,7 +8,6 @@ function Table() {
       `https://rigorous-thundering-rifle.glitch.me/issue`
     );
     const data = await response.json();
-    console.log(data);
     setissueData(data);
   };
   useEffect(() => {

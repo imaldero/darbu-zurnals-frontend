@@ -9,7 +9,6 @@ function ActionTable() {
         `https://rigorous-thundering-rifle.glitch.me/action`
       );
       const data = await response.json();
-      console.log(data);
       setActionData(data);
     };
     getActionData();

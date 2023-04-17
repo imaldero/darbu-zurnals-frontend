@@ -48,7 +48,6 @@ function Form({ onPageChange }) {
     const month = String(now.getMonth() + 1).padStart(2, "0");
     const date = String(now.getDate()).padStart(2, "0");
 
-    console.log(form);
     const data = new FormData(event.target);
     const currentDate = `${year}-${month}-${date}`;
     const currentTime = new Date().toLocaleTimeString("en-US", {
@@ -80,8 +79,6 @@ function Form({ onPageChange }) {
       }),
     })
       .then((response) => {
-        console.log(response.status);
-        console.log(response);
         return response.json();
       })
       .catch((e) => {

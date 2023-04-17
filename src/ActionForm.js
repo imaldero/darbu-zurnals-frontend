@@ -41,7 +41,6 @@ function ActionForm({ onPageChange }) {
     const month = String(now.getMonth() + 1).padStart(2, "0");
     const date = String(now.getDate()).padStart(2, "0");
 
-    console.log(form);
     const data = new FormData(event.target);
     const currentDate = `${year}-${month}-${date}`;
     const currentTime = new Date().toLocaleTimeString("en-US", {
@@ -51,16 +50,6 @@ function ActionForm({ onPageChange }) {
     const id_status = data.get(`id_status`);
     const id_user = data.get(`id_user`);
     const id_report = data.get(`id_report`);
-    console.log(
-      JSON.stringify({
-        name,
-        id_status,
-        currentDate,
-        currentTime,
-        id_user,
-        id_report,
-      })
-    );
 
     await fetch(`https://rigorous-thundering-rifle.glitch.me/submit-action`, {
       headers: {
@@ -77,8 +66,6 @@ function ActionForm({ onPageChange }) {
       }),
     })
       .then((response) => {
-        console.log(response.status);
-        console.log(response);
         return response.json();
       })
       .catch((e) => {
