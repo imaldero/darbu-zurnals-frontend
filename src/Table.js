@@ -35,9 +35,7 @@ function Table() {
         <tbody>
           {issueData.map((e) => {
             const oridate = e.date;
-            const modifiedDate = oridate
-              .replace("T21:00:00.000Z", "")
-              .replaceAll(`-`, `/`);
+            const modifiedDate = oridate.slice(10).replaceAll(`-`, `/`);
             return (
               <tr>
                 <td>{e.id}</td>
