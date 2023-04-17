@@ -32,7 +32,7 @@ function ActionTable() {
         <tbody>
           {actionData.map((e) => {
             const oridate = e.date;
-            const modifiedDate = oridate.slice(10).replaceAll(`-`, `/`);
+            const modifiedDate = oridate.slice(0, 10).replaceAll(`-`, `/`);
             return (
               <tr>
                 <td>{e.id}</td>
